@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtime-window-audit"
+version = "0.1.0"
+description = "Measure false skips and needless transfers under local size/mtime comparison policies."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "KanadeK"}]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/KanadeK/mtime-window-audit"
+Issues = "https://github.com/KanadeK/mtime-window-audit/issues"
+
+[project.scripts]
+mtime-window-audit = "mtime_window_audit.cli:main"
+
+[project.optional-dependencies]
+dev = ["build==1.6.1", "coverage==7.17.0", "ruff==0.17.2"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.coverage.run]
+branch = true
+source = ["mtime_window_audit"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
+exclude_also = ["if __name__ == .__main__.:"]

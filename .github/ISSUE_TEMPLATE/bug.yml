@@ -1,0 +1,16 @@
+name: Bug report
+description: Report unexpected behavior using synthetic inputs
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction, version, Python and operating system
+      description: Use synthetic paths and data. Do not include private inventories.
+    validations:
+      required: true
